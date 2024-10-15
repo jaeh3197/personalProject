@@ -24,16 +24,24 @@ public class App {
             int secondNum = sc.nextInt();
 
             //제어문 구현
-            if (operator == '+') {
-                result = firstNum + secondNum;
-            } else if (operator == '-') {
-                result = firstNum - secondNum;
-            } else if (operator == '*') {
-                result = firstNum * secondNum;
-            } else if (operator == '/') {
-                result = firstNum / secondNum;
+            //숫자에 음수를 입력할 경우 오류 출력
+            //나눗셈 연산에서 분모에 0이 올 경우 오류 출력
+            if (firstNum >= 0 && secondNum >= 0) {
+                if (operator == '+') {
+                    result = firstNum + secondNum;
+                } else if (operator == '-') {
+                    result = firstNum - secondNum;
+                } else if (operator == '*') {
+                    result = firstNum * secondNum;
+                } else if (operator == '/' && secondNum == 0) {
+                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                } else if (operator == '/') {
+                    result = firstNum / secondNum;
+                }
+                System.out.println("결과: " + result);
+            } else {
+                System.out.println("음수는 입력할 수 없습니다.");
             }
-            System.out.println("결과" + result);
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             answer = sc.next();
