@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Calculator {
     //연산 결과를 저장하는 list 선언 및 생성
-    public List<Integer> results = new ArrayList<>();
+    //컬렉션 필드를 캡슐화
+    private List<Integer> results = new ArrayList<>();
 
     //매개변수를 설정하고 App에 있던 연산 메서드를 가져옴
     public int calculate(int firstNum, int secondNum, char operator) {
@@ -28,5 +29,14 @@ public class Calculator {
             }
         }
         return result;
+    }
+
+    //Getter 메서드 구현
+    public List<Integer> getResults() {
+        return results;
+    }
+    //Setter 메서드 구현
+    public void setResults(List<Integer> results) {
+        this.results = results;
     }
 }

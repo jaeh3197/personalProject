@@ -30,7 +30,7 @@ public class App {
             //Calculator 에서 계산된 결과값을 저장하기 위한 변수 선언
             int result = calculator.calculate(firstNum, secondNum, operator);
             System.out.println("결과: " + result);
-            calculator.results.add(result);     //Calculator 의 연산 결과를 저장하는 list 에 저장
+            calculator.getResults().add(result);     //Calculator 의 연산 결과를 저장하는 list 에 저장
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             answer = sc.next();
