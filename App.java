@@ -5,9 +5,13 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        //Calculator 인스턴스 생성
+        Calculator calculator = new Calculator();
+
+        //스캐너 생성
         Scanner sc = new Scanner(System.in);
+
         //변수 선언
-        int result = 0;
         String answer = null;
 
         //반복문 구현
@@ -15,33 +19,18 @@ public class App {
         //answer 이 exit 와 같다면 false, while 문 종료
         while (!(Objects.equals(answer, "exit"))) {
             System.out.println("첫 번째 숫자를 입력해주세요: ");
-            int firstNum = sc.nextInt();
+            int firstNum = sc.nextInt();    //첫 번째 변수 입력
 
             System.out.println("사칙연산 기호를 입력하세요: ");
-            char operator = sc.next().charAt(0);
+            char operator = sc.next().charAt(0);    //연산자 입력
 
             System.out.println("두 번째 숫자를 입력해주세요: ");
-            int secondNum = sc.nextInt();
+            int secondNum = sc.nextInt();   //두 번째 변수 입력
 
-            //제어문 구현
-            //숫자에 음수를 입력할 경우 오류 출력
-            //나눗셈 연산에서 분모에 0이 올 경우 오류 출력
-            if (firstNum >= 0 && secondNum >= 0) {
-                if (operator == '+') {
-                    result = firstNum + secondNum;
-                } else if (operator == '-') {
-                    result = firstNum - secondNum;
-                } else if (operator == '*') {
-                    result = firstNum * secondNum;
-                } else if (operator == '/' && secondNum == 0) {
-                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                } else if (operator == '/') {
-                    result = firstNum / secondNum;
-                }
-                System.out.println("결과: " + result);
-            } else {
-                System.out.println("음수는 입력할 수 없습니다.");
-            }
+            //Calculator 에서 계산된 결과값을 저장하기 위한 변수 선언
+            int result = calculator.calculate(firstNum, secondNum, operator);
+            System.out.println("결과: " + result);
+            calculator.results.add(result);     //Calculator 의 연산 결과를 저장하는 list 에 저장
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             answer = sc.next();
