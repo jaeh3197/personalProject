@@ -33,7 +33,12 @@ public class App {
             calculator.getResults().add(result);     //Calculator 의 연산 결과를 저장하는 list 에 저장
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            System.out.println("가장 먼저 저장된 데이터를 삭제하시겠습니까? (remove 입력 시 삭제)");
             answer = sc.next();
+            if (Objects.equals(answer, "remove")) {
+                calculator.removeResults();
+            }
         }
+        System.out.println(calculator.getResults());
     }
 }

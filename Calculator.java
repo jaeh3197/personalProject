@@ -39,4 +39,9 @@ public class Calculator {
     public void setResults(List<Integer> results) {
         this.results = results;
     }
+
+    //remove 메서드 구현
+    public void removeResults() {
+            results.removeFirst();
+    }
 }
