@@ -13,15 +13,16 @@ public enum OperatorType {
 
     //열거한 상수들을 담을 operator 변수 선언
     private String operator;
-    private BiFunction<Integer, Integer, Integer> expression;
+    private BiFunction<Double, Double, Double> expression;
 
-    OperatorType(String operator, BiFunction<Integer, Integer, Integer> expression) {
+
+    OperatorType(String operator, BiFunction<Double, Double, Double> expression) {
         this.operator = operator;
         this.expression = expression;
     }
 
     //받아온 변수들을 적용
-    public static int calculate(String operator, int firstNum, int secondNum) {
+    public static double calculate(String operator, double firstNum, double secondNum) {
         return getOperatorType(operator).expression.apply(firstNum, secondNum);
     }
 

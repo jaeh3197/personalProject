@@ -6,10 +6,10 @@ import java.util.List;
 public class ArithmeticCalculator {
     //연산 결과를 저장하는 list 선언 및 생성
     //컬렉션 필드를 캡슐화
-    private List<Integer> results = new ArrayList<>();
+    private List<Double> results = new ArrayList<>();
 
     //매개변수를 설정하고 App 에 있던 연산 메서드를 가져옴
-    public int calculate(int firstNum, int secondNum, String operator) {
+    public double calculate(double firstNum, double secondNum, String operator) {
 
 //        //결과값을 저장하기 위한 변수 선언
 //        int result = 0;
@@ -35,11 +35,11 @@ public class ArithmeticCalculator {
     }
 
     //Getter 메서드 구현
-    public List<Integer> getResults() {
+    public List<Double> getResults() {
         return results;
     }
     //Setter 메서드 구현
-    public void setResults(List<Integer> results) {
+    public void setResults(List<Double> results) {
         this.results = results;
     }
 

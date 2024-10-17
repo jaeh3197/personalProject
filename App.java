@@ -3,7 +3,7 @@ package report;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class App {
+public class App extends ArithmeticCalculator {
     public static void main(String[] args) {
         //Calculator 인스턴스 생성
         ArithmeticCalculator calculator = new ArithmeticCalculator();
@@ -19,16 +19,16 @@ public class App {
         //answer 이 exit 와 같다면 false, while 문 종료
         while (!(Objects.equals(answer, "exit"))) {
             System.out.println("첫 번째 숫자를 입력해주세요: ");
-            int firstNum = sc.nextInt();    //첫 번째 변수 입력
+            double firstNum = sc.nextDouble();    //첫 번째 변수 입력
 
             System.out.println("사칙연산 기호를 입력하세요: ");
             String operator = sc.next();    //연산자 입력
 
             System.out.println("두 번째 숫자를 입력해주세요: ");
-            int secondNum = sc.nextInt();   //두 번째 변수 입력
+            double secondNum = sc.nextDouble();   //두 번째 변수 입력
 
             //Calculator 에서 계산된 결과값을 저장하기 위한 변수 선언
-            int result = calculator.calculate(firstNum, secondNum, operator);
+            double result = calculator.calculate(firstNum, secondNum, operator);
             System.out.println("결과: " + result);
             calculator.getResults().add(result);     //Calculator 의 연산 결과를 저장하는 list 에 저장
 
