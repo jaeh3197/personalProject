@@ -38,6 +38,7 @@ public class ArithmeticCalculator {
     public List<Double> getResults() {
         return results;
     }
+
     //Setter 메서드 구현
     public void setResults(List<Double> results) {
         this.results = results;
@@ -45,6 +46,6 @@ public class ArithmeticCalculator {
 
     //remove 메서드 구현
     public void removeResults() {
-            results.removeFirst();
+        results.removeFirst();
     }
 }
